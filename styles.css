@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(234, 238, 238);
+}
+
+header {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main {
+    
+}
+
+.category {
+    display: flex;
+    margin-top: 100px;
+    padding-left: 10px;
+    gap: 10px;
+}
+
+.genres{
+    border-radius: 10px;
+    height: 28px;
+    width: 100px;
+    padding-left: 8px;
+    margin-top: 10px;
+}
+
+.recently-updated{
+    border-radius: 10px;
+    height: 28px;
+    width: 140px;
+    padding-left: 8px;
+    margin-top: 10px;
+} 
