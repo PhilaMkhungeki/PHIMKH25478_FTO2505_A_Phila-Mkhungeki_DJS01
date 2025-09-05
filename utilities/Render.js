@@ -1,8 +1,7 @@
-//@ts-check
+
 
 import { podcasts } from "../data.js";
-
-//get from local storage and display on the app
+import { displayPodcastModal } from "./modal.js";
 /**
  * 
  *  
@@ -16,6 +15,9 @@ export function displayPodcast(){
         const podcastCard = document.createElement("div");
         podcastCard.classList.add("podcast");
 
+        //store the podcast ID in a dataset
+        podcastCard.dataset.podcastID = podcast.id;
+
         podcastCard.innerHTML = `
             <img src="${podcast.image}"/>
             <h2 class="title">${podcast.title}</h2>
@@ -25,6 +27,12 @@ export function displayPodcast(){
         `;
         //append to the html main section
         main?.appendChild(podcastCard);
+
+        //add a click event listener for the podcast
+        podcastCard.addEventListener('click', () => {
+                displayPodcastModal(podcast.id);
+        });
+
+        
     });
-    
 }
