@@ -21,11 +21,17 @@ export function displayPodcast(){
         //convert the date to be in a human-readable format
         const date = new Date(podcast.updated);
 
+        //display genre names
+        const genreNames = podcast.genres.map(id => {
+            const genre = genres.find(g => g.id === id);
+            return genre ? genre.title : "unknown";
+        }).join(", ");
+
         podcastCard.innerHTML = `
             <img src="${podcast.image}"/>
             <h2 class="title">${podcast.title}</h2>
             <p class="seasons">${podcast.seasons} seasons</p>
-            <p class="genres">${podcast.genres}</p>
+            <p class="genres">${genreNames}</p>
             <p class="update">Updated: ${date.toDateString()}</p>
         `;
         //append to the html main section
