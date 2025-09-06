@@ -1,9 +1,7 @@
 import { displayPodcast } from "./utilities/Render.js";
 
-
 function initPodcastApp() {
     displayPodcast();
-    
     
 }
 

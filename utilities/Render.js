@@ -1,6 +1,6 @@
 
 
-import { podcasts } from "../data.js";
+import { podcasts, genres } from "../data.js";
 import { displayPodcastModal } from "./modal.js";
 /**
  * 
@@ -18,12 +18,15 @@ export function displayPodcast(){
         //store the podcast ID in a dataset
         podcastCard.dataset.podcastID = podcast.id;
 
+        //convert the date to be in a human-readable format
+        const date = new Date(podcast.updated);
+
         podcastCard.innerHTML = `
             <img src="${podcast.image}"/>
             <h2 class="title">${podcast.title}</h2>
-            <p class="seasons">${podcast.seasons}</p>
+            <p class="seasons">${podcast.seasons} seasons</p>
             <p class="genres">${podcast.genres}</p>
-            <p class="update">${podcast.updated}</p>
+            <p class="update">Updated: ${date.toDateString()}</p>
         `;
         //append to the html main section
         main?.appendChild(podcastCard);

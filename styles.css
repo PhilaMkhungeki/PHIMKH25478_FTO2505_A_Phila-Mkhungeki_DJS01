@@ -81,16 +81,26 @@ header {
 .modal {
     z-index: 1;
     background-color: #ffffff;
-    width: 70%;
+    border: none;
+    width: 65%;
+    height: 80%;
 }
 
 .modal img {
-    width: 40px;
-    height: 50px;
+    width: 180px;
+    height: 190px;
+    float: left;
+    margin-right: 15px;
 }
 
 .close {
     color: red;
+    float: right;
+    font-weight: bold;
+}
+
+.close:hover {
+    cursor: pointer;
 }
 
 /*mobile view*/
