@@ -1,5 +1,5 @@
 
-import { podcasts, genres } from "../data.js";
+import { podcasts, genres, seasons } from "../data.js";
 
 /**
  * @param {String} podcastID 
@@ -19,8 +19,15 @@ export function displayPodcastModal(podcastID){
         return genre? genre.title : "unknown genre";
     }).join(", ");
 
+    //display seasons
+    const podcastSeasons = seasons.find(s => s.id === podcastToRender.id);
+
+    let season = "";
+    if (podcastSeasons) {
+        season = podcastSeasons.seasonDetails.map(sd => `<li>${sd.title} ${sd.episodes} episodes</li>`);
+    }
+
     modal.innerHTML = `
-    
         <span class="close">&times;</span>
         <h2 class="title">${podcastToRender.title}</h2>
         <img src="${podcastToRender.image}" alt="Large Cover Image"/>
@@ -32,7 +39,9 @@ export function displayPodcastModal(podcastID){
             <p class="update">Last updated: ${date.toDateString()}</p>
         </div>
         <h3>Seasons</h3>
-        <p class="seasons">${podcastToRender.seasons}</p>
+        <div>
+         <p class="seasons">${season}</p>
+        </div>
     `;
 
     modal.showModal();

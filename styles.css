@@ -19,18 +19,19 @@ header {
 
 .genres{
     border-radius: 10px;
-    height: 28px;
+    height: 35px;
     width: 100px;
     padding-left: 8px;
     margin-top: 10px;
+    
 }
 
 .recently-updated{
     border-radius: 10px;
-    height: 28px;
+    height: 35px;
     width: 140px;
     padding-left: 8px;
-    margin-top: 10px;
+    margin-top: 5px;
 } 
 
 .main {
@@ -42,7 +43,7 @@ header {
 
 .podcast {
     width: 200px;
-    height: 280px;
+    height: 290px;
     background-color: #ffffff;
     border-radius: 8px;
     padding: 15px;    
@@ -104,3 +105,18 @@ header {
 }
 
 /*mobile view*/
+@media screen and (max-width:576px){
+    .main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        
+    }
+
+    .podcast {
+        width: 90%;
+        height: 290px;
+        background-color: #ffffff;
+           
+    }
+}

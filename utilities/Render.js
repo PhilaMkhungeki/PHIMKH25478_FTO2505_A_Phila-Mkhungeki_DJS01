@@ -3,7 +3,7 @@
 import { podcasts, genres } from "../data.js";
 import { displayPodcastModal } from "./modal.js";
 /**
- * 
+ * display a list of podcast shows on the landing page
  *  
  */
 export function displayPodcast(){
@@ -41,7 +41,5 @@ export function displayPodcast(){
         podcastCard.addEventListener('click', () => {
                 displayPodcastModal(podcast.id);
         });
-
-        
     });
 }
